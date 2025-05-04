@@ -1,129 +1,115 @@
-﻿# Git Commands Cheat Sheet
+# Google Cloud Sales Analytics Application
 
-This guide contains essential Git commands your team will use while working on the **Sales Analytic Dashboard** project. Each command is explained with its purpose to ensure smooth collaboration.
+A comprehensive sales analytics platform designed to track and analyze Google Cloud sales performance, pipeline management, and customer relationships.
 
----
+## Project Overview
 
-## **1. Initial Setup**
-### Clone the Repository
-```bash
-git clone https://github.com/your-username/Sales-Analytic-Dashboard.git
-```
-- **Purpose**: Downloads the repository to your local machine and creates a folder with the project files.
+This capstone project is a full-stack web application that provides sales executives and directors with powerful tools to monitor, analyze, and optimize their sales performance for Google Cloud products and services. The application features role-based access control, interactive visualizations, and detailed reporting capabilities across multiple business dimensions.
 
-### Navigate to the Project Folder
-```bash
-cd Sales-Analytic-Dashboard
-```
-- **Purpose**: Changes the current directory to the project folder.
+## Key Features
 
----
+### 🎯 Dashboard & KPIs
+- Real-time Key Performance Indicators (Pipeline, Revenue, Signings, Wins)
+- Interactive charts including revenue histograms, win distributions, and pipeline composition
+- Role-based data visibility (Directors see aggregated data, Account Executives see their client data)
 
-## **2. Branch Management**
-### Create a New Branch
-```bash
-git checkout -b feature/branch-name
-```
-- **Purpose**: Creates and switches to a new branch for your feature or task.
+### 📊 Sales Pipeline Management
+- Opportunity tracking through sales stages (Qualify → Refine → Tech Eval → Proposal → Migrate)
+- Forecast categories (Omit → Pipeline → Upside → Commit → Closed-Won)
+- Advanced filtering and search capabilities
+- Pipeline funnel visualization and product category heatmaps
 
-### Switch to an Existing Branch
-```bash
-git checkout branch-name
-```
-- **Purpose**: Switches to the specified branch.
+### 💼 Contract & Revenue Tracking
+- Contract signing management with ACV/TCV calculations
+- Monthly revenue recognition and tracking
+- Industry and geographic distribution analysis
+- Quarterly target achievement monitoring
 
-### View All Branches
-```bash
-git branch
-```
-- **Purpose**: Lists all local branches. Use `git branch -a` to see remote branches as well.
+### 🏆 Sales Wins System
+- Technical win achievements tracking (GCP and Data Analytics categories)
+- Multiple win pathways and levels
+- Win multiplier system for performance evaluation
+- Quarterly evolution and category distribution charts
 
----
+### 👥 Client Management
+- Comprehensive client portfolio visualization
+- Industry treemap and provincial distribution charts
+- Filtering by geography and industry sector
+- Detailed client information with account executive assignments
 
-## **3. Making Changes**
-### Check Current Status
-```bash
-git status
-```
-- **Purpose**: Shows the status of your working directory, including modified files and untracked files.
+### 👔 Executive Management
+- Account executive performance monitoring
+- Team performance comparison charts
+- Executive directory and contact management
 
-### Add Changes to Staging Area
-```bash
-git add .
-```
-- **Purpose**: Stages all changes in your current directory.
+## Technology Stack
 
-### Commit Changes
-```bash
-git commit -m "Your commit message here"
-```
-- **Purpose**: Saves the staged changes with a message describing what was done.
+### Backend
+- **Framework**: Flask with SQLAlchemy ORM
+- **Database**: PostgreSQL (hosted on Neon)
+- **API Structure**: RESTful endpoints using Flask blueprints
+- **Authentication**: JWT
 
----
+### Frontend
+- **Framework**: Angular
+- **Charts**: ApexCharts
+- **Visualizations**: 
+  - Histogram charts for revenue and win distributions
+  - Pie charts for pipeline and signings composition
+  - Funnel charts for sales stage progression
+  - Heatmaps for product-forecast analysis
+  - Treemaps for client industry distribution
+  - Polar area charts for geographic analysis
+  - Bubble charts for multi-dimensional data
+  - Stacked area charts for time-series analysis
 
-## **4. Synchronizing with Remote**
-### Pull the Latest Changes
-```bash
-git pull origin branch-name
-```
-- **Purpose**: Updates your local branch with the latest changes from the remote branch.
+## Database Schema
 
-### Push Changes to Remote
-```bash
-git push origin branch-name
-```
-- **Purpose**: Pushes your local commits to the remote repository.
+The application uses a comprehensive database schema including:
 
----
-
-## **5. Merging Changes**
-### Merge a Branch into Another
-```bash
-git checkout target-branch
-git merge source-branch
-```
-- **Purpose**: Combines the changes from `source-branch` into `target-branch`.
-
----
-
-## **6. Handling Conflicts**
-### Check for Merge Conflicts
-If there are conflicts after pulling or merging, Git will notify you. Open the conflicting files, resolve the issues, then run:
-```bash
-git add resolved-file
-git commit -m "Resolve merge conflict"
-```
-- **Purpose**: Marks the conflict as resolved and commits the changes.
-
----
-
-## **7. Miscellaneous**
-### View Commit History
-```bash
-git log --oneline
-```
-- **Purpose**: Displays a condensed history of commits.
-
-### Undo Changes (Before Committing)
-```bash
-git checkout -- file-name
-```
-- **Purpose**: Discards changes in the specified file and restores it to the last committed state.
-
-### Delete a Branch (Locally)
-```bash
-git branch -d branch-name
-```
-- **Purpose**: Deletes the specified branch locally after it has been merged.
-
----
-
-## **8. Best Practices**
-- **Always Pull Before Pushing**: Ensure your local branch is up-to-date with remote changes.
-- **Commit Often**: Make small, frequent commits with clear messages.
-- **Work on Feature Branches**: Always create a new branch for your tasks and merge it into `development` or `main` when completed.
-- **Resolve Conflicts Promptly**: If conflicts occur, resolve them as soon as possible.
-
----
+- **Users**: Account executives, directors, and administrators
+- **Clients**: Customer organizations with industry and geographic data
+- **Products**: Google Cloud products organized by category
+- **Opportunities**: Sales pipeline tracking
+- **Signings**: Contract details and financial information
+- **Revenue**: Monthly revenue recognition
+- **Wins**: Technical achievement tracking
+- **Targets**: Quarterly and yearly performance goals
 
 
+
+## Win Achievement System
+
+The application tracks two categories of wins:
+- **GCP (Google Cloud Platform)**: Core infrastructure and platform services
+- **DA (Data Analytics)**: Data processing and analytics products
+
+Each category has multiple levels (Win 1, Win 2, Win 3) with various pathways to achievement through revenue thresholds or specific contract values.
+
+## Key Performance Indicators
+
+The system tracks several critical KPIs:
+- Total Contract Value (TCV)
+- Annual Contract Value (ACV)
+- Pipeline Coverage Ratio
+- Win Rate
+- Revenue per Client
+- Average Deal Size
+- Sales Cycle Length
+
+## License
+
+This project is part of a capstone project for educational purposes.
+
+## Authors
+
+This project was developed as a capstone project for the Software Development program at SAIT (Southern Alberta Institute of Technology). It was a collaborative group effort by:
+
+- **Rafael Santos Coelho** - Backend Development
+- **[Connor Davison](https://github.com/ConDavison1/)** - Frontend & Backend Development
+- **[Logan Buye](https://github.com/loganbuye)** - Frontend Development
+- **[Kyle Guenter](https://github.com/KJG19)** - Frontend Development
+
+## Project Context
+
+This application was created as the culminating project for the SAIT Software Development program, demonstrating our ability to design and implement a full-stack enterprise application using modern web technologies and best practices.
