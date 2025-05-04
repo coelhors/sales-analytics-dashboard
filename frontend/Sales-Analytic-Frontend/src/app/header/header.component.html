@@ -1,0 +1,43 @@
+<div class="header">
+  <div class="logo">
+    <img src="assets/googlecloudlogo.png" alt="Logo" />
+  </div>
+
+  <div class="search-bar">
+    <i class="fa fa-search"></i>
+    <input
+      type="text"
+      placeholder="Ask Ai For Insights..."
+      [(ngModel)]="query"
+      (keydown)="onSearchKeydown($event)"
+    />
+  </div>
+
+  <div class="actions">
+    <label class="toggle-switch">
+      <input
+        type="checkbox"
+        [checked]="isDarkMode"
+        (change)="toggleDarkMode()"
+      />
+      <span class="slider">
+        <i class="fa fa-moon icon moon"></i>
+        <i class="fa fa-sun icon sun"></i>
+      </span>
+    </label>
+  </div>
+
+  <div class="ai-panel" [class.open]="showInsight">
+    <div class="panel-header">
+      <h3>AI Insight</h3>
+      <button class="close-btn" (click)="closeInsightPopup()">×</button>
+    </div>
+    <div class="panel-body">
+      <div *ngFor="let insight of aiInsights" class="insight-entry">
+        <p><strong>Q:</strong> {{ insight.query }}</p>
+        <p><strong>A:</strong> {{ insight.response }}</p>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>
